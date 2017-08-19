@@ -78,5 +78,3 @@ gcloud projects add-iam-policy-binding ${GCP_PROJECT} \
   --member serviceAccount:terraform@${GCP_PROJECT}.iam.gserviceaccount.com \
   --role roles/container.admin
 ```
-
-Ensure the service account has adequate permissions
