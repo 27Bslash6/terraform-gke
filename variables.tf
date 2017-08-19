@@ -1,20 +1,59 @@
+# https://www.terraform.io/docs/providers/google/r/container_cluster.html#argument-reference
+
 variable "gcp_project" {
- description =  "Name of the Google Compute project to use"
+  description = "Name of the Google Compute project to use"
 }
 
 variable "gcp_credentials" {
   description = "Credentials file to use for accessing Google Compute resources"
 }
+
 variable "gcp_region" {
   description = "Google Compute region to use for the cluster"
-  default = "us-central1"
+  default     = "us-west1"
 }
 
 variable "cluster_name" {
   description = "Google Container Cluster name to use for the cluster"
 }
 
-variable "gcp_zone" {
+variable "gcp_primary_zone" {
   description = "Google Computer zone to use for the cluster"
-  default = "us-central1-a"
+  default     = "us-west1-a"
+}
+
+variable "gcp_additional_zones" {
+  description = "Additional Google Compute zones for a multi-zone cluster"
+  default     = []
+}
+
+variable "initial_node_count" {
+  description = "Number of nodes to bring up in each zone"
+  default     = "3"
+}
+
+// Node configuration
+variable "machine_type" {
+  description = "The name of a Google Compute Engine machine type. Defaults to n1-standard-1."
+  default     = "n1-standard-1"
+}
+
+// Container image to run on each node: options include cos (default), ubuntu and container-vm (deprecated)
+// https://cloud.google.com/container-engine/docs/node-images
+variable "image_type" {
+  description = "Container image to run on each node: options include cos (default), ubuntu and container-vm (deprecated)"
+  default     = "cos"
+}
+
+variable "disk_size_gb" {
+  description = "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. Defaults to 100"
+  default     = "20"
+}
+
+variable "gcp_master_username" {
+  description = "The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint"
+}
+
+variable "gcp_master_password" {
+  description = "The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint"
 }
