@@ -38,7 +38,11 @@ resource "google_container_cluster" "primary" {
     ]
   }
 
-  provisioner "local-exec" {
+  provisioner "local-exec" "get-credentials" {
     command = "gcloud container clusters get-credentials ${var.cluster_name} --zone ${google_container_cluster.primary.zone}"
+  }
+
+  provisioner "local-exec" "custom" {
+    command = "${var.custom_provisioner}"
   }
 }

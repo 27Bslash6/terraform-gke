@@ -57,3 +57,8 @@ variable "gcp_master_username" {
 variable "gcp_master_password" {
   description = "The password to use for HTTP basic authentication when accessing the Kubernetes master endpoint"
 }
+
+variable "custom_provisioner" {
+  description = "Additional local-exec provisioner commands"
+  default     = ""
+}
