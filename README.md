@@ -2,8 +2,9 @@
 _Building a Google Container Cluster on Google Compute using Terraform_
 
 ## Prerequisites
-* terraform > version 0.6.14
-* kubectl > version 1.2.2
+*   terraform > version 0.6.14
+*   gcloud commandline tool
+*   kubectl > version 1.2.2
 
 ## Getting Started
 
