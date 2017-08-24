@@ -42,7 +42,7 @@ variable "machine_type" {
 // https://cloud.google.com/container-engine/docs/node-images
 variable "image_type" {
   description = "Container image to run on each node: options include cos (default), ubuntu and container-vm (deprecated)"
-  default     = "cos"
+  default     = "COS"
 }
 
 variable "disk_size_gb" {
