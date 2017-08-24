@@ -1,18 +1,5 @@
 # https://www.terraform.io/docs/providers/google/r/container_cluster.html#argument-reference
 
-variable "gcp_project" {
-  description = "Name of the Google Compute project to use"
-}
-
-variable "gcp_credentials" {
-  description = "Credentials file to use for accessing Google Compute resources"
-}
-
-variable "gcp_region" {
-  description = "Google Compute region to use for the cluster"
-  default     = "us-west1"
-}
-
 variable "cluster_name" {
   description = "Google Container Cluster name to use for the cluster"
 }

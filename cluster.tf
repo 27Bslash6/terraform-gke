@@ -4,12 +4,12 @@ https://www.terraform.io/docs/providers/google/r/container_cluster.html
 
 */
 
-// Configure the Google Cloud provider
-provider "google" {
-  credentials = "${file("${var.gcp_credentials}")}"
-  project     = "${var.gcp_project}"
-  region      = "${var.gcp_region}"
-}
+# Configure the Google Cloud provider
+# provider "google" {
+#   credentials = "${file("${var.gcp_credentials}")}"
+#   project     = "${var.gcp_project}"
+#   region      = "${var.gcp_region}"
+# }
 
 // Create the Google Container Cluster
 resource "google_container_cluster" "primary" {
