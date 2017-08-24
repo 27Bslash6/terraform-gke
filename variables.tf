@@ -37,6 +37,11 @@ variable "disk_size_gb" {
   default     = "20"
 }
 
+variable "local_ssd_count" {
+  description = "(Optional) The amount of local SSD disks that will be attached to each cluster node. Defaults to 0."
+  default     = "0"
+}
+
 variable "gcp_master_username" {
   description = "The username to use for HTTP basic authentication when accessing the Kubernetes master endpoint"
 }

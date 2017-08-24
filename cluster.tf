@@ -30,6 +30,8 @@ resource "google_container_cluster" "primary" {
     disk_size_gb = "${var.disk_size_gb}"
     image_type   = "${var.image_type}"
 
+    local_ssd_count = "${var.local_ssd_count}"
+
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
       "https://www.googleapis.com/auth/devstorage.read_only",
