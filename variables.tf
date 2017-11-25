@@ -34,7 +34,7 @@ variable "image_type" {
 
 variable "disk_size_gb" {
   description = "Size of the disk attached to each node, specified in GB. The smallest allowed disk size is 10GB. Defaults to 100"
-  default     = "20"
+  default     = "50"
 }
 
 variable "local_ssd_count" {
