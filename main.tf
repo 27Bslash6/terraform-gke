@@ -5,7 +5,10 @@ https://www.terraform.io/docs/providers/google/r/container_cluster.html
 */
 
 # Configure the Google Cloud provider
-provider "google" {}
+terraform {
+  # The configuration for this backend will be filled in by Terragrunt
+  backend "s3" {}
+}
 
 // Create the Google Container Cluster
 resource "google_container_cluster" "primary" {
